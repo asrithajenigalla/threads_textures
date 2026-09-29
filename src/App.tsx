@@ -28,6 +28,7 @@ import { SwatchKitModal } from './components/SwatchKitModal';
 import { ArchivesModal } from './components/ArchivesModal';
 import { SaveLoadModal } from './components/SaveLoadModal';
 import { SpecModal } from './components/SpecModal';
+import { N8nChatWidget } from './components/N8nChatWidget';
 
 const FAVORITES_STORAGE_KEY = 'threads_textures_favorites_v1';
 
@@ -66,6 +67,7 @@ export default function App() {
   const [isSavePresetOpen, setIsSavePresetOpen] = useState(false);
   const [isLoadPresetOpen, setIsLoadPresetOpen] = useState(false);
   const [isSpecOpen, setIsSpecOpen] = useState(false);
+  const [isChatOpen, setIsChatOpen] = useState(false);
 
   // Custom added motifs
   const [customMotifs, setCustomMotifs] = useState<Motif[]>([]);
@@ -152,6 +154,7 @@ export default function App() {
         onOpenCraftsman={() => setIsCraftsmanOpen(true)}
         onOpenSwatchKit={() => setIsSwatchKitOpen(true)}
         onOpenPresets={() => setIsLoadPresetOpen(true)}
+        onOpenChat={() => setIsChatOpen(true)}
         searchQuery={searchQuery}
         onSearchChange={setSearchQuery}
         favoriteCount={favorites.length}
@@ -270,6 +273,17 @@ export default function App() {
         isOpen={isSpecOpen}
         onClose={() => setIsSpecOpen(false)}
         state={designState}
+        garment={currentGarment}
+        fabric={currentFabric}
+        color={currentColor}
+        motif={currentMotif}
+        hardware={currentHardware}
+      />
+
+      {/* n8n AI Chat Widget */}
+      <N8nChatWidget
+        isOpen={isChatOpen}
+        onToggle={() => setIsChatOpen(!isChatOpen)}
         garment={currentGarment}
         fabric={currentFabric}
         color={currentColor}

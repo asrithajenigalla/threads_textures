@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Sparkles, BookOpen, Layers, UserCheck } from 'lucide-react';
+import { Search, Sparkles, BookOpen, Layers, UserCheck, MessageSquareText } from 'lucide-react';
 import { LightingPreset } from '../types';
 
 interface HeaderProps {
@@ -9,6 +9,7 @@ interface HeaderProps {
   onOpenCraftsman: () => void;
   onOpenSwatchKit: () => void;
   onOpenPresets: () => void;
+  onOpenChat: () => void;
   searchQuery: string;
   onSearchChange: (q: string) => void;
   favoriteCount: number;
@@ -21,6 +22,7 @@ export const Header: React.FC<HeaderProps> = ({
   onOpenCraftsman,
   onOpenSwatchKit,
   onOpenPresets,
+  onOpenChat,
   searchQuery,
   onSearchChange,
   favoriteCount
@@ -75,6 +77,16 @@ export const Header: React.FC<HeaderProps> = ({
           >
             <Layers className="w-3.5 h-3.5 text-[#8C7A5B]" />
             <span>Bespoke Swatch Kit</span>
+          </button>
+
+          <button
+            type="button"
+            onClick={onOpenChat}
+            className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#B89355]/10 hover:bg-[#B89355]/20 text-[#8A5817] border border-[#B89355]/30 transition-all cursor-pointer"
+          >
+            <MessageSquareText className="w-3.5 h-3.5 text-[#B89355]" />
+            <span className="font-semibold text-xs text-[#24211D]">AI Stylist</span>
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
           </button>
         </nav>
 
