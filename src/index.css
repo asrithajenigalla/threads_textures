@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: "Cormorant Garamond", Georgia, serif;
+    --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF8F5;
+    color: #24211D;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif-luxury {
+    font-family: var(--font-serif);
+  }
+}
+
+/* Custom subtle scrollbars for panels */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(235, 229, 216, 0.4);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(184, 147, 85, 0.35);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(184, 147, 85, 0.6);
+}
+
+/* Shimmer animation for silk sheen */
+@keyframes silkShimmer {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  50% { transform: translateX(100%) rotate(25deg); }
+  100% { transform: translateX(100%) rotate(25deg); }
+}
+
+.animate-silk-sheen {
+  animation: silkShimmer 8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Textured paper background for atelier panels */
+.bg-atelier-panel {
+  background-color: rgba(255, 253, 249, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(223, 215, 199, 0.7);
+}
+
+.bg-atelier-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(228, 221, 207, 0.85);
+  box-shadow: 0 2px 8px -2px rgba(45, 38, 25, 0.04), 0 1px 3px -1px rgba(45, 38, 25, 0.02);
+}
+
+.bg-atelier-card-active {
+  background-color: #FAF7F0;
+  border-color: #B89355;
+  box-shadow: 0 4px 14px -3px rgba(184, 147, 85, 0.16);
+}

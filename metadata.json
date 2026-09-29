@@ -1,0 +1,6 @@
+{
+  "name": "Threads & Textures – Custom Weave Studio",
+  "description": "Luxury custom textile and traditional garment visualization atelier for bespoke bespoke sarees, sherwanis, kimonos, qipaos, kaftans, and batik creations.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
